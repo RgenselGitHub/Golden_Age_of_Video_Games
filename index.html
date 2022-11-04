@@ -14485,32 +14485,7 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-from decimal import Decimal as D
-last_output = _
 
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (10, 6), \
-    &quot;The results should have six columns and ten rows.&quot;
-    assert results.columns.tolist() == [&quot;game&quot;, &quot;platform&quot;, &quot;publisher&quot;, &quot;developer&quot;, &quot;games_sold&quot;, &quot;year&quot;], \
-    &#39;The results should have columns named &quot;game&quot;, &quot;platform&quot;, &quot;publisher&quot;, &quot;developer&quot;, &quot;games_sold&quot;, and &quot;year&quot;.&#39;
-    assert _.DataFrame().loc[0, &#39;games_sold&#39;] == D(&#39;82.90&#39;)
-    &quot;The top selling game should be Wii Sports with 82.90 million copies sold.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
@@ -14628,31 +14603,6 @@ def test_results():
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-last_output = _
-
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (1, 1), \
-    &quot;The query should return just one value, a count of games where both critic_score and user_score are null.&quot;
-    assert results.columns.tolist() == [&quot;count&quot;], \
-    &#39;The results should have just one column, called &quot;count&quot;.&#39;
-    assert last_output.DataFrame().loc[0, &#39;count&#39;] == 31, \
-    &quot;There should be 31 games where both critic_score and user_score are null.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
@@ -14811,34 +14761,7 @@ def test_results():
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-from decimal import Decimal as D
-last_output = _
 
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (10, 2), \
-    &quot;Make sure to limit the query to only ten results.&quot;
-    assert results.columns.tolist() == [&quot;year&quot;, &quot;avg_critic_score&quot;], \
-    &#39;The results should have two columns, called &quot;year&quot; and &quot;avg_critic_score&quot;.&#39;
-    assert last_output.DataFrame().loc[0, &#39;year&#39;] == 1990, \
-    &quot;The year with the highest score should be 1990.&quot;
-    assert last_output.DataFrame().loc[0, &#39;avg_critic_score&#39;] == D(&#39;9.80&#39;), \
-    &quot;The highest average critic score should be 9.80.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
@@ -15012,36 +14935,6 @@ def test_results():
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-from decimal import Decimal as D
-last_output = _
-
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (10, 3), \
-    &quot;Make sure to limit the query to only ten results.&quot;
-    assert set(last_output.DataFrame().columns) == set([&quot;year&quot;, &quot;num_games&quot;, &quot;avg_critic_score&quot;]), \
-    &#39;The results should have three columns: &quot;year&quot;, &quot;num_games&quot;, and &quot;avg_critic_score&quot;.&#39;
-    assert last_output.DataFrame().loc[0, &#39;year&#39;] == 1998, \
-    &quot;The year with the highest score should be 1998.&quot;
-    assert last_output.DataFrame().loc[0, &#39;num_games&#39;] == 10, \
-    &quot;In the year with the highest critic score, there were 10 games released.&quot;
-    assert last_output.DataFrame().loc[0, &#39;avg_critic_score&#39;] == D(&#39;9.32&#39;), \
-    &quot;The highest average critic score should be 9.32.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
@@ -15228,33 +15121,7 @@ def test_results():
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-last_output = _
 
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (6, 2), \
-    &quot;There should be six years that dropped off the critics&#39; favorite list after implementing the criteria that the year had to have at least five games released to be considered.&quot;
-    assert results.columns.tolist() == [&quot;year&quot;, &quot;avg_critic_score&quot;], \
-    &#39;The results should have two columns: &quot;year&quot; and &quot;avg_critic_score&quot;.&#39;
-    assert last_output.DataFrame().loc[5, &#39;year&#39;] == 1982, \
-    &quot;The last year returned by the query should be 1982.&quot;
-    assert last_output.DataFrame().loc[5, &#39;avg_critic_score&#39;] == 9.00, \
-    &quot;1982&#39;s average critic score should be 9.00.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
@@ -15423,35 +15290,7 @@ def test_results():
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-last_output = _
 
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (10, 3), \
-    &quot;Don&#39;t forget to limit the query results to ten.&quot;
-    assert set(results.columns.tolist()) == set([&quot;year&quot;, &quot;num_games&quot;, &quot;avg_user_score&quot;]), \
-    &#39;The results should have three columns: &quot;year&quot;, &quot;num_games&quot;, and &quot;avg_user_score&quot;.&#39;
-    assert last_output.DataFrame().loc[0, &#39;year&#39;] == 1997, \
-    &quot;The year with the highest user score should be 1997.&quot;
-    assert last_output.DataFrame().loc[0, &#39;num_games&#39;] == 8, \
-    &quot;In the year with the highest user score, there were eight games released.&quot;
-    assert last_output.DataFrame().loc[0, &#39;avg_user_score&#39;] == 9.50, \
-    &quot;The highest average user score should be 9.50.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
@@ -15625,31 +15464,7 @@ def test_results():
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-last_output = _
 
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (3, 1), \
-    &quot;There should be three years present in both tables.&quot;
-    assert results.columns.tolist() == [&quot;year&quot;], \
-    &#39;The results should just have one column: &quot;year&quot;.&#39;
-    assert last_output.DataFrame().loc[0, &#39;year&#39;] == 1998, \
-    &quot;The first year returned by the query should be 1998.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
@@ -15783,35 +15598,7 @@ def test_results():
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_tests">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">nose</span>
-from decimal import Decimal as D
-last_output = _
 
-
-def test_output_type():
-    assert str(type(last_output)) == &quot;&lt;class &#39;sql.run.ResultSet&#39;&gt;&quot;, \
-    &quot;Please ensure an SQL ResultSet is the output of the code cell.&quot; 
-
-results = last_output.DataFrame()
-
-def test_results():
-    assert results.shape == (3, 2), \
-    &quot;There should be games sales data for three years: the same three years from the previous query.&quot;
-    assert results.columns.tolist() == [&quot;year&quot;, &quot;total_games_sold&quot;], \
-    &#39;The results should have two columns: &quot;year&quot; and &quot;total_games_sold&quot;.&#39;
-    assert last_output.DataFrame().loc[0, &#39;year&#39;] == 2008, \
-    &quot;Just like in the last query, the first year returned should be 2008.&quot;
-    assert last_output.DataFrame().loc[0, &#39;total_games_sold&#39;] == D(&#39;175.07&#39;), \
-    &quot;In 2008, the total_games_sold value should be 175.07.&quot;
-</pre></div>
-
-     </div>
 </div>
 </div>
 </div>
